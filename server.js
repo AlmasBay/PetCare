@@ -10,7 +10,8 @@ app.use(cors()); // Разрешаем кросс-доменные запрос�
 
 app.get('/api/places', async (req, res) => {
   const { lat, lng } = req.query;
-  const apiKey = 'AIzaSyCn2ndeHkGiOjNO-TaIgWGUjBgL1NyilHw'; // Замените на ваш Google API ключ
+  const apiKey = process.env.GOOGLE_API_KEY;
+ // Замените на ваш Google API ключ
   const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=10000&keyword=pet+store&key=${apiKey}`;
 
   try {
