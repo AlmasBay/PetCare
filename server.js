@@ -8,8 +8,9 @@ const port = 5000;
 
 // Разрешаем только запросы с домена GitHub Pages
 app.use(cors({
-  origin: 'https://almasbay.github.io/PetCare', // Указываем точный URL фронтенда
+  origin: 'https://almasbay.github.io', // Разрешить доступ с любого поддомена
 }));
+
 
 
 app.get('/api/places', async (req, res) => {
