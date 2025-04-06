@@ -21,7 +21,8 @@ const MapComponent = () => {
 
   useEffect(() => {
     if (userLocation) {
-      fetch(`http://localhost:5000/api/places?lat=${userLocation[0]}&lng=${userLocation[1]}`)
+      fetch(`https://petcare-api-4jfv.onrender.com/api/places?lat=${userLocation[0]}&lng=${userLocation[1]}`)
+
         .then(response => response.json())
         .then(data => {
           if (data.results && data.results.length > 0) {
