@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Faq.css';
+import './faq.css';
 import { FaChevronDown } from 'react-icons/fa';
 
 const faqData = [
