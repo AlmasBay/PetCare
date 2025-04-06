@@ -1,0 +1,64 @@
+.FirstSection {
+  text-align: center;
+  background:  #FF7514; 
+  height: 1000px;
+  
+}
+
+.title-sect-one{
+  text-align: center;
+  margin: 0 ;
+  color: white;
+  margin-bottom: 100px;
+  font-size: 50px;
+  width: 100%;
+  font-family: "Dela Gothic One", sans-serif;
+font-weight: 400;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.reason-card {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px; 
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.reason-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 24px;
+  color: #555;
+}
+

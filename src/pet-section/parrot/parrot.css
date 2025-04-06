@@ -1,0 +1,52 @@
+.parrot {
+  filter: brightness(80%);
+  cursor: pointer;
+  position: relative;
+  height: 700px;
+}
+
+
+.parrot:hover{
+  filter: drop-shadow(0 0 15px rgba(255 ,117 ,20 ,0.8));
+}
+
+.parrot, .modal-content-parrot, .modal-content-parrot img {
+  user-select: none; 
+  caret-color: transparent; 
+}
+
+
+.modal-overlay-parrot {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content-parrot {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal-content-parrot img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+
+.close-btn-parrot {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
