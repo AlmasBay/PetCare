@@ -6,12 +6,15 @@ import cors from 'cors';
 const app = express();
 const port = 5000;
 
-app.use(cors()); // Разрешаем кросс-доменные запросы
+// Разрешаем только запросы с домена GitHub Pages
+app.use(cors({
+  origin: 'https://almasbay.github.io/PetCare', // Указываем точный URL фронтенда
+}));
+
 
 app.get('/api/places', async (req, res) => {
   const { lat, lng } = req.query;
-  const apiKey = process.env.GOOGLE_API_KEY;
- // Замените на ваш Google API ключ
+  const apiKey = process.env.GOOGLE_API_KEY; // Используем переменную окружения для API ключа
   const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=10000&keyword=pet+store&key=${apiKey}`;
 
   try {
