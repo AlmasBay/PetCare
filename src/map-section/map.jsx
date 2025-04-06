@@ -21,12 +21,7 @@ const MapComponent = () => {
 
   useEffect(() => {
     if (userLocation) {
-      // Используем Google Places API для поиска зоомагазинов рядом
-      const googleAPIKey = 'AIzaSyCn2ndeHkGiOjNO-TaIgWGUjBgL1NyilHw'; // Вставь сюда свой API ключ
-      const radius = 5000; // Радиус поиска в метрах
-      const placesUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${userLocation[0]},${userLocation[1]}&radius=${radius}&type=store&keyword=pet&key=${googleAPIKey}`;
-
-      fetch(placesUrl)
+      fetch(`http://localhost:5000/api/places?lat=${userLocation[0]}&lng=${userLocation[1]}`)
         .then(response => response.json())
         .then(data => {
           if (data.results && data.results.length > 0) {
@@ -36,14 +31,14 @@ const MapComponent = () => {
           }
         })
         .catch(error => {
-          console.error('Ошибка при загрузке данных:', error);
+          console.error('Error fetching data:', error);
           setError('Ошибка при загрузке данных');
         });
     }
   }, [userLocation]);
 
   return (
-    <div className="map-container" id="map">
+    <div className="map-container" id='map'>
       <h1 className="map-title">Ближайшие зоомагазины</h1>
       <div className="map-wrapper">
         {userLocation ? (
